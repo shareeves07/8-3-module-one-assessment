@@ -196,8 +196,18 @@ function filterByGenre(movies, genre) {
   if (movies.length < 1) {
     return [];
   }
-  if (!genre) {
-    return [];
+  let genreArr = [];
+  let genreFound = false;
+  for (i = 0; i < movies.length; i++) {
+    if (movies[i].genre.includes(genre)) {
+      genreFound = true;
+    }
+  }
+  for (i = 0; i < movies.length; i++) {
+    if (movies[i].genre.includes(genre)) {
+      genreArr.push(movie[i].title);
+    }
+    return genreArr;
   }
 }
 
