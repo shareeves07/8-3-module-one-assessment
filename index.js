@@ -193,22 +193,13 @@ function findById(movies, id) {
  *  //> []
  */
 function filterByGenre(movies, genre) {
-  if (movies.length < 1) {
-    return [];
-  }
-  let genreArr = [];
-  let genreFound = false;
-  for (i = 0; i < movies.length; i++) {
-    if (movies[i].genre.includes(genre)) {
-      genreFound = true;
+  let arr = [];
+  for (let movie of movies) {
+    if (movie.genre.toLowerCase().includes(genre.toLowerCase())) {
+      arr.push(movie);
     }
   }
-  for (i = 0; i < movies.length; i++) {
-    if (movies[i].genre.includes(genre)) {
-      genreArr.push(movie[i].title);
-    }
-    return genreArr;
-  }
+  return arr;
 }
 
 /**
